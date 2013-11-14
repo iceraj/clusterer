@@ -5,3 +5,4 @@ Design goals included:
 -	concurrent execution of calculations to encourage users to experiment with parameters
 
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/iceraj/clusterer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
