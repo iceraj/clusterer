@@ -7,6 +7,3 @@ Design goals included:
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/iceraj/clusterer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/iceraj/clusterer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
