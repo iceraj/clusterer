@@ -1,0 +1,11 @@
+URI: l2fprod-common-all.jar
+
+URI: packed/l2fprod-common-all.jar.pack.gz
+Content-Type: x-java-archive
+Content-Encoding: pack200-gzip
+Content-Disposition: attachment; filename=l2fprod-common-all.jar
+
+URI: unpacked/l2fprod-common-all.jar
+Content-Type: x-java-archive
+Content-Disposition: attachment; filename=l2fprod-common-all.jar
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://web.mit.edu/polz/clusterer" href="clusterer.jnlp">
+  <information>
+    <title>Clusterer</title>
+    <vendor>Bugaco.com</vendor>
+    <homepage href="http://web.mit.edu/polz/clusterer"/>
+    <shortcut online='true'>
+    <desktop/>
+    </shortcut>
+    <description>Clusterer: extendable java application for sequence grouping and cluster analyses</description>
+    <description kind="short">Clusterer</description>
+    <icon href="Mioritic.png"/>
+    <!--
+    <icon kind="splash" href="images/splash.gif"/>
+    -->
+  </information>
+  <security>
+<!--      <all-permissions/> -->
+  </security>
+  <resources>
+  	  <j2se version="1.4+" max-heap-size="999m"/>
+	  <jar href='mioritic_clusterer.jar'/>
+	  <jar href='mioritic_ui.jar'/>
+	  <jar href='jcommon-0.9.6.jar'/>
+	  <jar href='jfreechart-0.9.21.jar' />
+	  <jar href='l2fprod-common-all.jar' />
+	  <jar href='rarefact.zip' />
+  </resources>
+  <application-desc 
+	name="Clusterer"
+	main-class="com.bugaco.mioritic.impl.module.project.Main"
+	width=800
+	height=600
+	>
+	<!-- main-class="com.bugaco.mioritic.impl.module.project.Project" -->
+	</application-desc>
+</jnlp> 
+

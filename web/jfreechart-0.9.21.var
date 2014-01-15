@@ -1,0 +1,11 @@
+URI: jfreechart-0.9.21.jar
+
+#URI: packed/jfreechart-0.9.21.jar.pack.gz
+#Content-Type: x-java-archive;qs=0.9
+#Content-Encoding: pack200-gzip
+#Content-Disposition: attachment; filename=jfreechart-0.9.21.jar
+
+URI: unpacked/jfreechart-0.9.21.jar
+Content-Type: x-java-archive;qs=0.7
+Content-Disposition: attachment; filename=jfreechart-0.9.21.jar
+

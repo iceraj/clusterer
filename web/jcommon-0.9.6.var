@@ -1,0 +1,11 @@
+URI: jcommon-0.9.6.jar
+
+URI: packed/jcommon-0.9.6.jar.pack.gz
+Content-Type: x-java-archive ; qc=0.9
+Content-Encoding: pack200-gzip
+Content-Disposition: attachment; filename=jcommon-0.9.6.jar
+
+URI: unpacked/jcommon-0.9.6.jar
+Content-Type: x-java-archive ;qc=0.3
+Content-Disposition: attachment; filename=jcommon-0.9.6.jar
+

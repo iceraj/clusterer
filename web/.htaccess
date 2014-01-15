@@ -1,0 +1,3 @@
+# Return the right mime type for JARs
+AddHandler application/x-type-map var
+AddEncoding pack200-gzip .pack.gz
