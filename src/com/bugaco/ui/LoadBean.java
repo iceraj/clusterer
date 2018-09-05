@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import com.bugaco.ui.models.users.DocumentModelUser;
 import com.bugaco.ui.models.DocumentModel;
 import java.awt.event.ActionEvent;
-import javax.jnlp.FileOpenService;
 import java.io.*;
 import javax.swing.text.*;
 
@@ -45,28 +44,7 @@ public class LoadBean extends JPanel implements DocumentModelUser {
                 System.err.println(retVal + " " + fileChooser + " " + length );
             } catch (FileNotFoundException ex5) {
             ex5.printStackTrace() ;
-        } catch( java.security.AccessControlException ex )
-            {
-                FileOpenService fos = null;
-                try {
-                    fos = (FileOpenService) javax.jnlp.ServiceManager.lookup(
-                            "javax.jnlp.FileOpenService");
-                    javax.jnlp.FileContents content = fos.openFileDialog(null, null);
-                    if( content != null )
-                    {
-                        is = content.getInputStream() ;
-                        length = content.getLength() ;
-                    }
-                } catch (Exception ex2) {
-                    ex2.printStackTrace();
-                    javax.swing.JOptionPane.showMessageDialog( (java.awt.Component) (e.getSource()) , new javax.swing.JLabel( "Can not load file due to: " + ex2.getMessage() ) );
-                } catch (  java.lang.NoClassDefFoundError ex3 )
-                {
-                    ex3.printStackTrace();
-                    javax.swing.JOptionPane.showMessageDialog( (java.awt.Component) (e.getSource()) , new javax.swing.JLabel( "Can not load file due to: " + ex3.getMessage() ) );
-
-                }
-            }
+        }
             if( is != null )
             {
                 try {

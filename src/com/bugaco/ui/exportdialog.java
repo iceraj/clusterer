@@ -1,6 +1,7 @@
 package com.bugaco.ui;
 
-import javax.jnlp.*;
+import java.awt.datatransfer.*;
+import java.awt.Toolkit;
 
 /**
  * <p>Title: Mioritic</p>
@@ -36,37 +37,27 @@ public class ExportDialog {
                 ) ;
         if( ret == 0 )
         {
-            ClipboardService clipboard = null;
-            try {
-                clipboard = (javax.jnlp.ClipboardService) javax.jnlp.
-                            ServiceManager.lookup("javax.jnlp.ClipboardService");
-                if( clipboard != null )
-                {
-                    clipboard.setContents( new java.awt.datatransfer.StringSelection( textMessage ) );
-                }
-            } catch (UnavailableServiceException ex) {
-                javax.swing.JOptionPane.showMessageDialog( parent , "Clipboard not available on this version on Web Start" , "ERROR" , javax.swing.JOptionPane.ERROR_MESSAGE );
-            }
+            StringSelection selection = new StringSelection(textMessage);
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(selection, selection);
         }
         if( ret == 1 )
         {
-            FileSaveService save = null;
+            java.io.FileOutputStream os;
             try {
-                save = (javax.jnlp.FileSaveService) javax.jnlp.ServiceManager.
-                       lookup("javax.jnlp.FileSaveService");
-                if( save != null )
-                {
-                    System.out.println( save.toString() ) ;
-                    javax.jnlp.FileContents file = save.saveFileDialog( null, null, new java.io.ByteArrayInputStream( textMessage.getBytes()) , null ) ;
-                    file.getOutputStream( true ).write( textMessage.getBytes() );
-                    file = null ;
+                javax.swing.JFileChooser fileChooser = new javax.swing.
+                        JFileChooser();
+                int retVal = fileChooser.showSaveDialog(parent);
+                if (retVal == javax.swing.JFileChooser.APPROVE_OPTION) {
+                    os = new java.io.FileOutputStream(fileChooser.
+                            getSelectedFile());
+                    os.write(textMessage.getBytes());
+                    os.close();
                 }
-
-            } catch (UnavailableServiceException ex1) {
-                javax.swing.JOptionPane.showMessageDialog( parent , "Save to local system not available on this version on Web Start" , "ERROR" , javax.swing.JOptionPane.ERROR_MESSAGE );
-            } catch (java.io.IOException ex2)
-            {
-                javax.swing.JOptionPane.showMessageDialog( parent , "Save failed with :" + ex2.getMessage() , "ERROR" , javax.swing.JOptionPane.ERROR_MESSAGE );
+            } catch (java.io.FileNotFoundException exfnf) {
+                javax.swing.JOptionPane.showConfirmDialog( parent , "File not found: " + exfnf.getLocalizedMessage()) ;
+            } catch (java.io.IOException exio) {
+                javax.swing.JOptionPane.showConfirmDialog( parent , "IOException: " + exio.getLocalizedMessage()) ;
             }
         }
     }
